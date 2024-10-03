@@ -8,7 +8,7 @@ import {Base64} from "@openzeppelin/contracts/utils/Base64.sol";
 error MoodNft__CantFlipMoodIfNotOwner();
 error ERC721Metadata__URI_QueryFor_NonExistentToken();
 
-contract DynamicNFT is ERC721, Ownable {
+contract MoodNFT is ERC721, Ownable {
     event NftCreated(uint256 tokenId);
 
     enum NftMood {
@@ -25,7 +25,7 @@ contract DynamicNFT is ERC721, Ownable {
     constructor(
         string memory happyNftUri,
         string memory sadNftUri
-    ) ERC721("MoodNFT", "MFT") Ownable(msg.sender) {
+    ) ERC721("MoodNft", "MFT") Ownable(msg.sender) {
         s_happyNftUri = happyNftUri;
         s_sadNftUri = sadNftUri;
         s_tokenCounter = 0;
